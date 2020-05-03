@@ -1,0 +1,25 @@
+{
+  "componentChunkName": "component---src-pages-index-js",
+  "path": "/",
+  "result": {
+    "data": {
+      "site": { "siteMetadata": { "title": "Notebook" } },
+      "allMarkdownRemark": {
+        "edges": [
+          {
+            "node": {
+              "excerpt": "This is gonna be the start to some thoughts. I’m not really sure where I want to go with it, but I’d like a place to be creative and host…",
+              "fields": { "slug": "/first-post/" },
+              "frontmatter": {
+                "date": "May 03, 2020",
+                "title": "Introduction",
+                "description": "A brief beginning"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pageContext": {}
+  }
+}
