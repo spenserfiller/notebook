@@ -52,3 +52,8 @@ Here’s a concise list of practices to engage the PNS and manage UC:
 Intense exercise activates the SNS but engages the PNS afterward, aiding recovery. However, jumping from exercise to mentally taxing work can overstimulate the SNS. Use PNS practices like deep breathing or meditation post-exercise and during/after work for a smoother transition.
 
 ---
+
+#### Summary: Connecting the Dots
+I’ve been gathering these insights for years, noticing a link between inflammation and my lifestyle, even though extreme UC symptoms are rare for me. I’ve long suspected these elements tie together and though I didn’t know about the autonomic nervous system (ANS) before, the evidence suggests it’s central to my experience. My racing mind rarely slows unless I’m intentional and working at a desk 8+ hours daily amplifies this, requiring extra effort. My brain goes into overdrive, spilling into other areas of life. Despite feeling positive, I think my nervous system is worn out, not letting my PNS do its job. Exercise has taught me a lot about this balance, shaping my lifestyle goals. The good news? These practices noticeably improve my experience, benefiting other areas too, though they take time. Subconsciously, I’ve been drawn to these ideas — maybe my gut-brain connection is actually steering my goals! This journey has solidified my belief in resting and recovering, even when I don’t feel “tired” like one does after exercise. Thinking all day might be like walking all day: you may not feel exhausted, but your body still needs to heal. 
+
+So give your mind some space, let go, focus on your breath, and let your body do what it knows best.
