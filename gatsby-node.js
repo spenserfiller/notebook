@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
             node {
               fields {
                 slug
+                collection
               }
               frontmatter {
                 title
@@ -31,12 +32,13 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  // Create blog posts pages.
+  // Create blog posts pages (links are displayed on a single index page, not individual pages)
   const posts = result.data.allMarkdownRemark.edges;
+  const blogPosts = posts.filter(post => post.node.fields.collection === 'blog');
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  blogPosts.forEach((post, index) => {
+    const previous = index === blogPosts.length - 1 ? null : blogPosts[index + 1].node;
+    const next = index === 0 ? null : blogPosts[index - 1].node;
 
     createPage({
       path: post.node.fields.slug,
@@ -55,10 +57,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
+    const parent = getNode(node.parent);
+    const collection = parent.sourceInstanceName;
+
     createNodeField({
       name: `slug`,
       node,
       value,
+    });
+    createNodeField({
+      name: `collection`,
+      node,
+      value: collection,
     });
   }
 };
