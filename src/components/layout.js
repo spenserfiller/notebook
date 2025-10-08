@@ -5,6 +5,7 @@ import { rhythm, scale } from "../utils/typography";
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
+  const linksPath = `${__PATH_PREFIX__}/links/`;
   let header;
 
   if (location.pathname === rootPath) {
@@ -12,7 +13,7 @@ const Layout = ({ location, title, children }) => {
       <h1
         style={{
           ...scale(1.5),
-          marginBottom: rhythm(1.5),
+          marginBottom: rhythm(0.5),
           marginTop: 0,
         }}
       >
@@ -33,6 +34,7 @@ const Layout = ({ location, title, children }) => {
         style={{
           fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
+          marginBottom: rhythm(0.5),
         }}
       >
         <Link
@@ -47,6 +49,38 @@ const Layout = ({ location, title, children }) => {
       </h3>
     );
   }
+
+  const nav = (
+    <nav
+      style={{
+        marginBottom: rhythm(1),
+        fontSize: '0.9rem',
+      }}
+    >
+      <Link
+        to="/"
+        style={{
+          boxShadow: 'none',
+          color: location.pathname === rootPath ? '#007acc' : 'inherit',
+          marginRight: rhythm(1),
+          textDecoration: 'none',
+        }}
+      >
+        Blog
+      </Link>
+      <Link
+        to="/links/"
+        style={{
+          boxShadow: 'none',
+          color: location.pathname === linksPath ? '#007acc' : 'inherit',
+          textDecoration: 'none',
+        }}
+      >
+        Links
+      </Link>
+    </nav>
+  );
+
   return (
     <div
       style={{
@@ -56,7 +90,10 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <header>
+        {header}
+        {nav}
+      </header>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
