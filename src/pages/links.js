@@ -11,9 +11,18 @@ const LinksIndex = ({ data, location }) => {
 
   // Helper function to decode HTML entities
   const decodeHtmlEntities = (text) => {
-    const textArea = document.createElement('textarea');
-    textArea.innerHTML = text;
-    return textArea.value;
+    // Simple regex-based decoder for common HTML entities
+    const entities = {
+      '&#x26;': '&',
+      '&amp;': '&',
+      '&lt;': '<',
+      '&gt;': '>',
+      '&quot;': '"',
+      '&#39;': "'",
+      '&apos;': "'",
+    };
+    
+    return text.replace(/&#x26;|&amp;|&lt;|&gt;|&quot;|&#39;|&apos;/g, (match) => entities[match] || match);
   };
 
   // Parse links from HTML (rendered markdown)
