@@ -28,7 +28,7 @@ Sentence Embeddings (numerical meaning representation)
 
 Responses that agree with each other get rewarded. Outliers are penalized.
 
-Q: Why is the sky blue?A1: Rayleigh scattering causes blue light to scatter.A2: The atmosphere scatters short-wavelength blue light.A3: Sunlight interacts with air molecules, making blue light more visible.✅ All responses point to Rayleigh scattering → High reward❌ Diverging responses are filtered out.
+Q: Why is the sky blue?A1: Rayleigh scattering causes blue light to scatter.A2: The atmosphere scatters short-wavelength blue light.A3: Sunlight interacts with air molecules, making blue light more visible. All responses point to Rayleigh scattering → High reward Diverging responses are filtered out.
 
 2. Logical Consistency Checking
 
@@ -36,7 +36,7 @@ If a response contradicts itself, it gets penalized.
 
 If the reasoning steps and final answer don’t match, it’s flagged.
 
- If A is greater than B, then B is greater than A.  B is greater than A. ❌ Breaks transitive logic → Penalized.
+ If A is greater than B, then B is greater than A.  B is greater than A. Breaks transitive logic → Penalized.
 
 3. Formatting & Readability
 
@@ -52,7 +52,7 @@ If the response just repeats the question, it gets penalized.
 
 If reasoning loops back on itself, dependency parsing detects it.
 
-Q: Why is the sky blue?A: Because the sky is blue in color.❌ Fails test → Penalized.
+Q: Why is the sky blue?A: Because the sky is blue in color. Fails test → Penalized.
 
 5. Factuality & Safety Filtering
 
@@ -60,7 +60,7 @@ Basic fact-checking against external sources like Wikipedia or scientific papers
 
 Regex-based safety filters prevent harmful content.
 
-Q: Who discovered gravity?A: Albert Einstein.❌ Wrong → Penalized.
+Q: Who discovered gravity?A: Albert Einstein. Wrong → Penalized.
 
 The Future of AI: Self-Training at Scale
 
@@ -111,11 +111,11 @@ Currently, these sources exist but are fragmented across different platforms. No
 
 The real opportunity?
 
-📌 A self-improving AI that can clean, merge, and structure all this knowledge autonomously.
+A self-improving AI that can clean, merge, and structure all this knowledge autonomously.
 
 What Comes Next?
 
-If this strategy scales, we could see:✅ Massive AI-driven knowledge repositories that consolidate global human knowledge.✅ AI that continually refines its own understanding, rather than relying on human training.✅ The end of the need for human alignment raters, replaced by logic-driven self-improvement.
+If this strategy scales, we could see: Massive AI-driven knowledge repositories that consolidate global human knowledge. AI that continually refines its own understanding, rather than relying on human training. The end of the need for human alignment raters, replaced by logic-driven self-improvement.
 
 This is way beyond search engines—it’s AI actively reasoning over the world’s knowledge to create a coherent, evolving framework of truth.
 
