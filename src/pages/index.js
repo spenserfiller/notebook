@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import SchematicHero from "../components/schematic-hero";
 import { rhythm } from "../utils/typography";
 
 const BlogIndex = ({ data, location }) => {
@@ -13,7 +14,8 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
+      <SchematicHero />
+      <div className="bracket-header">BLOG POSTS</div>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
