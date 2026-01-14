@@ -2,6 +2,7 @@
 title: "Anathem"
 date: "2026-01-12"
 description: "Anathem is a 1000 page tomb that I couldn't put down"
+draft: true
 ---
 
 I feel like I had so many thoughts on Anathem and now I can't think of anything. It's only been like 4 days. 
