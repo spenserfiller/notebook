@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { rhythm, scale } from "../utils/typography";
+import { rhythm } from "../utils/typography";
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const linksPath = `${__PATH_PREFIX__}/links/`;
+  const projectsPath = `${__PATH_PREFIX__}/projects/`;
 
   const nav = (
     <nav
@@ -37,9 +38,21 @@ const Layout = ({ location, children }) => {
           color: location.pathname === linksPath ? 'var(--accent)' : 'var(--text-muted)',
           textDecoration: 'none',
           borderBottom: 'none',
+          marginRight: rhythm(1),
         }}
       >
         [ LINKS ]
+      </Link>
+      <Link
+        to="/projects/"
+        style={{
+          boxShadow: 'none',
+          color: location.pathname === projectsPath ? 'var(--accent)' : 'var(--text-muted)',
+          textDecoration: 'none',
+          borderBottom: 'none',
+        }}
+      >
+        [ PROJECTS ]
       </Link>
     </nav>
   );

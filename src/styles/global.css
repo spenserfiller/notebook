@@ -120,3 +120,20 @@ hr {
   border-top: 1px dashed var(--border-color);
   margin: 3rem 0;
 }
+
+/* Project Card Hover Effects */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-bottom: none !important;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
+  z-index: 10;
+}

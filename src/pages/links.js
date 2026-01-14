@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import { rhythm } from "../utils/typography";
 
 const LinksIndex = ({ data, location }) => {
@@ -77,7 +77,7 @@ const LinksIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Links" />
+      <Seo title="Links" />
       <p style={{ marginBottom: rhythm(1.5) }}>
         A collection of interesting links and resources I've found around the web.
       </p>

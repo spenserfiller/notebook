@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const projectPost = path.resolve(`./src/templates/project-post.js`);
   const result = await graphql(
     `
       {
@@ -35,6 +36,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create blog posts pages (links are displayed on a single index page, not individual pages)
   const posts = result.data.allMarkdownRemark.edges;
+  
+  // Blog Posts
   const blogPosts = posts.filter(post => post.node.fields.collection === 'blog');
 
   blogPosts.forEach((post, index) => {
@@ -51,6 +54,43 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  // Projects
+  const projectPosts = posts.filter(post => post.node.fields.collection === 'projects');
+
+  projectPosts.forEach((post, index) => {
+    const previous = index === projectPosts.length - 1 ? null : projectPosts[index + 1].node;
+    const next = index === 0 ? null : projectPosts[index - 1].node;
+
+    createPage({
+      path: post.node.fields.slug,
+      component: projectPost,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    });
+  });
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      title: String
+      date: Date @dateformat
+      description: String
+      draft: Boolean
+      status: String
+      tags: [String]
+      thumbnail: String
+    }
+  `;
+  createTypes(typeDefs);
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
